@@ -1,0 +1,785 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --Marine-blue: hsl(213, 96%, 18%);
+--Purplish-blue: hsl(243, 100%, 62%);
+--Pastel-blue: hsl(228, 100%, 84%);
+--Light-blue: hsl(206, 94%, 87%);
+--Strawberry-red: hsl(354, 84%, 57%);
+--Cool-gray: hsl(231, 11%, 63%);
+--Light-gray: hsl(229, 24%, 87%);
+--Magnolia: hsl(217, 100%, 97%);
+--Alabaster: hsl(231, 100%, 99%);
+--White: hsl(0, 0%, 100%);
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--Magnolia);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    width: 800px;
+    height: 600px;
+    background-color: var(--White);
+    border-radius: 10px;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@media screen and (max-width:430px) {
+    body{
+        width: 100%;
+        overflow: hidden;
+    }
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        width: 90%;
+        height: 700px;
+        display: flex;
+        flex-direction: column;
+        left: 25px;
+        position: absolute;
+        background-color: transparent;
+    
+    }
+    .container> .sidebar> .steps {
+        position: relative;
+        display: flex;
+        width: 200px;
+        height: 50px;
+    }
+    .container> .sidebar>.sidesvg{
+        position: fixed;
+    }
+    .container> .sidebar>.sidesvg >.destop{
+        display: none;
+    }
+    .container> .sidebar>.sidesvg >.moble{
+        display: block;
+    }
+}
+.container> .sidebar>.sidesvg >.destop{
+    display: block;
+}
+.container> .sidebar>.sidesvg >.moble{
+    display: none;
+}
+@media screen and (max-width:430px) {
+    .container{
+        left: 10px;
+        height: 450px;
+        position: absolute;
+    }
+}
+.container> .sidebar{
+    display: flex;
+    height: 100%;
+    /* margin-left: 20px; */
+}
+.container> .sidebar> .steps {
+    display: flex;
+    padding-top: 5vmax;
+    justify-content:flex-start;
+    flex-direction: column;
+    height: 100%;
+    position: absolute;
+}
+.container> .sidebar> .steps >.step{
+    display: flex;
+    width: 200px;
+    height: 50px;
+    background-color: transparent;
+    align-items: center;
+    margin: 10px ;
+    padding: 0px 20px;
+}
+@media screen and (max-width:430px) {
+    .container> .sidebar> .steps{
+        top:-100px;
+        left: 15px;
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+    }
+    .container > .sidebar > .sidesvg{
+        top: -100px;
+        left: -10px;
+        position: absolute;
+    }
+    .container> .sidebar> .steps >.step{
+        width: 100%;
+        padding: 0px;
+    }
+}
+.container> .sidebar> .steps >.step > .number{
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--White);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--White);
+    border-radius: 50%;
+}
+.number1{
+    border: 2px solid var(--Marine-blue);
+}
+.active{
+    background-color: var(--Light-blue);
+    color: var(--Marine-blue);
+    border: 2px solid var(--Marine-blue);
+}
+.container> .sidebar> .steps >.step > .texts{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 20px;
+}
+.container> .sidebar> .steps >.step > .texts > .text{
+    font-size: 12px;
+    font-weight: lighter;
+    color: var(--Light-gray);
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container> .sidebar> .steps >.step > .texts > .para{
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--White);
+    display: flex;
+}
+
+.container > .root{
+    position: absolute;
+    margin-left: 300px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+@media screen and (max-width:430px) {
+    .container > .root{
+        position:absolute;
+top:0px;
+        width: 100%;
+        height: 100%;
+        background-color: var(--White);
+        border-radius: 5px;
+        margin-left: 10px;
+    }
+    .container> .sidebar> .steps {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .container> .sidebar> .steps >.step > .texts {
+        display: none;
+    }
+    .container > .root > .Step1{
+        height: 350px;
+    }
+}
+/* style the step 1 */
+.container > .root > .Step1{
+    width: 100%;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+.container > .root > .Step1> .header{
+    font-size: 30px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--Marine-blue);
+}
+@media screen and (max-width:430px) {
+    .container > .root > .Step1> .header{
+    font-size: 20px;
+    width: 100%;
+    }
+}
+
+.container > .root > .Step1> .text{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--Cool-gray);
+}
+.container > .root > .Step1 > div{
+    width: 100%;
+    gap: 5px;
+    display: grid;
+}
+.container > .root > .Step1 > div > .text > label{
+    font-size: 16px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--Marine-blue);
+}
+.container > .root > .Step1 >div > .text{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.container > .root > .Step1 > div > .text > span{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    color: var(--Strawberry-red);
+    display: none;
+}
+.container > .root > .Step1 > div > input{
+    height: 45px;
+    border: 1px solid var(--Cool-gray);
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left:10px;
+}
+@media screen and (max-width:370px) {
+    .container > .root > .Step1 > input{
+        position: absolute;
+        bottom: -130px;
+        right: 0px;
+    }
+}
+@media screen and (max-width:430px) {
+    .container > .root > .Step1 > input{
+        position: absolute;
+        bottom: -180px;
+        right: 0px;
+    }
+}
+.container > .root > .Step1 > div > input:hover{
+    cursor: pointer;
+    border: 1px solid var(--Purplish-blue);
+}
+.container > .root > .Step1 > input{
+    width: 100px;
+    height: 45px;
+    border: 1px solid var(--Cool-gray);
+    border-radius: 10px;
+    background-color: var(--Marine-blue);
+    margin-left: 300px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--White);
+}
+.container > .root > .Step1 > input:hover{
+    cursor: pointer;
+}
+
+
+/* style the step 2 */
+.container > .root > .Step2{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-around;
+    display: none;
+    padding: 70px;
+}
+.container > .root > .Step2 > div{
+    width: 100%;
+    gap: 5px;
+    display: grid;
+}
+.container > .root > .Step2> .header{
+    font-size: 30px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--Marine-blue);
+}
+@media screen and (max-width:430px) {
+    .container > .root > .Step2{
+        padding: 0px;
+        display: flex;
+        justify-content: flex-start;
+        display: none;
+    }
+    .container > .root > .Step2> .header{
+        font-size: 20px;
+     
+    }
+}
+
+.container > .root > .Step2> .text{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--Cool-gray);
+    height: 50px;
+}
+.container > .root > .Step2 > .Step2_container{
+ 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.container > .root > .Step2 > .Step2_container .container1{
+    width: 100px;
+    height: 150px;
+    border: 2px solid var(--Cool-gray);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+@media screen and (max-width:430px) {
+    .container > .root > .Step2 > .Step2_container{
+        flex-direction: column;
+    
+    }
+    .container > .root > .Step2 > .Step2_container > .container1{
+        width:100%;
+        height: 50px;
+        margin-top: 30px;
+        padding: 3px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+}
+.container > .root > .Step2 > .Step2_container .container1 > .text{
+    display: grid;
+}
+.container > .root > .Step2 > .Step2_container .container1:hover{
+    border: 2px solid var(--Purplish-blue);
+    cursor: pointer;
+    background-color: var(--Magnolia);
+}
+.container > .root > .Step2 > .Step2_container .container1  > .text > .h_text{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: var(--Marine-blue);
+}
+.container > .root > .Step2 > .Step2_container .container1 > .text > .mon{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    color: var(--Marine-blue);
+    display: none;
+}
+.container > .root > .Step2 > .Step2_container .container1 > .text > .price{
+    font-size: 12px;
+    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--Cool-gray);
+}
+.container > .root > .Step2 > .root{
+    display: flex;
+    width: 90%;
+    height: 50px;
+    background-color: var(--Magnolia);
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    margin: 20px auto;
+}
+@media screen and (max-width:430px) {
+    .container > .root > .Step2 > .root{
+        width: 95%;
+        bottom: 0;
+        position: absolute;
+        padding: 20px 0px;
+    }
+}
+.container > .root > .Step2 > .root > .text{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--Marine-blue);
+}
+.container > .root > .Step2 > .root > .btns{
+    width: 30px;
+    height: 15px;
+    background-color:var(--Marine-blue) ;
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2px;
+    cursor: pointer;
+}
+.container > .root > .Step2 > .root > .btns > .btn{
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color:var(--White);
+}
+.container > .root > .Step2 > .root > .y_text{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--Cool-gray);
+}
+.container > .root > .Step2 > .btns{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+}
+@media screen and (max-width:430px) {
+    .container > .root >.Step2 > .btns{
+        bottom: -80px;
+        position: absolute;
+        left: 0;
+    }
+}
+.container > .root > .Step2 > .btns > .go_back{
+    font-size: 16px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    background-color: transparent;
+    color: var(--Cool-gray);
+}
+.container > .root > .Step2 > .btns > .go_back:hover{
+    cursor: pointer;
+}
+.container > .root > .Step2 > .btns > .next_step{
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: var(--White);
+    border: none;
+    background-color: var(--Marine-blue);
+}
+.container > .root > .Step2 > .btns > .next_step:hover{
+    cursor: pointer;
+}
+/* style the step 3 */
+.container > .root > .Step3{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 70px;
+    display: none;
+}
+.container > .root > .Step3> .header{
+    font-size: 30px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--Marine-blue);
+}
+@media screen and (max-width:430px) {
+    .container > .root >.Step3{
+        padding: 0;
+    }
+    .container > .root >.Step3> .header{
+        font-size: 20px;
+    }
+}
+
+.container > .root > .Step3> .text{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--Cool-gray);
+}
+.container > .root > .Step3 > .root{
+    width: 100%;
+    display: grid;
+    height: 300px;
+}
+.container > .root > .Step3 > .root > .row{
+    display: flex;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid  var(--Cool-gray);
+    border-radius: 5px;
+    margin: 5px;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+.container > .root > .Step3 > .root > .row:hover{
+    cursor: pointer;
+    border: 1px solid  var(--Purplish-blue);
+}
+.container > .root > .Step3 > .root > .row > .row1{
+    display: flex;
+
+}
+.container > .root > .Step3 > .root > .row > .row1 > .text{
+    margin-left: 10px;
+}
+.container > .root > .Step3 > .root > .row > .row1 > .text > .name{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: var(--Marine-blue);
+}
+.container > .root > .Step3 > .root > .row > .row1 > .text > .text{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--Cool-gray);
+}
+.container > .root > .Step3 > .root > .row > .price{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--Purplish-blue);
+}
+.container > .root > .Step3 > .btns{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: -60px;
+}
+.container > .root > .Step3 > .btns > .go_back{
+    font-size: 16px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    background-color: transparent;
+    color: var(--Cool-gray);
+}
+.container > .root > .Step3 > .btns > .go_back:hover{
+    cursor: pointer;
+}
+.container > .root > .Step3 > .btns > .next_step{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: var(--White);
+    border: none;
+    background-color: var(--Marine-blue);
+}
+.container > .root > .Step3 > .btns > .next_step:hover{
+    cursor: pointer;
+}
+
+/* style the step 4 */
+.container > .root > .Step4{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 70px;
+    display: none;
+}
+.container > .root > .Step4> .header{
+    font-size: 30px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--Marine-blue);
+}
+@media screen and (max-width:430px) {
+    .container > .root >.Step4{
+        padding: 0;
+    justify-content: space-around;
+
+    }
+    .container > .root >.Step4 >.header{
+        font-size: 20px;
+    }
+}
+
+.container > .root > .Step4> .text{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--Cool-gray);
+}
+.container > .root > .Step4 > .root{
+    width: 100%;
+    
+    height: 300px;
+}
+.container > .root > .Step4 > .root > .row{
+    display: flex;
+    width: 100%;
+    padding: 5px;
+    background-color: var(--Light-blue);
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+.container > .root > .Step4 > .root > .row:first-child{
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.container > .root > .Step4 > .root > .row:nth-child(3){
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.container > .root > .Step4 > .root > .row > .text{
+    margin-left: 10px;
+}
+.container > .root > .Step4 > .root > .row > .text > .name{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: var(--Cool-gray);
+}
+.container > .root > .Step4 > .root > .row > .text > .name> span{
+    display: none;
+}
+.container > .root > .Step4 > .root > .row > .text > .change{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--Marine-blue);
+    border-bottom: 1px solid var(--Marine-blue);
+    font-weight: lighter;
+    width: 45px;
+    display: none;
+}
+.container > .root > .Step4 > .root > .row > .price{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--Marine-blue);
+}
+.container > .root > .Step4 > .root > .total{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+}
+.container > .root > .Step4 > .root > .total>.text{
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    color: var(--Cool-gray);
+}
+.container > .root > .Step4 > .root > .total>.price{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: var(--Marine-blue);
+}
+.container > .root > .Step4 > .btns{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+@media screen and (max-width:430px) {
+    .container > .root > .Step4 >.btns{
+        position: absolute;
+        bottom: -70px;
+    }
+}
+.container > .root > .Step4 > .btns > .go_back{
+    font-size: 16px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    background-color: transparent;
+    color: var(--Cool-gray);
+}
+.container > .root > .Step4 > .btns > .go_back:hover{
+    cursor: pointer;
+}
+.container > .root > .Step4 > .btns > .confirm{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: var(--White);
+    border: none;
+    background-color: var(--Purplish-blue);
+}
+.container > .root > .Step4 > .btns > .confirm:hover{
+    cursor: pointer;
+}
+/* styling the final */
+.container > .root > .step5{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 70px;
+    display: none;
+}
+@media screen and (max-width:430px) {
+    .container > .root > .step5{
+        padding: 0;
+    }
+}
+.container > .root >.step5 > .final{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+.container > .root >.step5 > .final > .header{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: var(--Marine-blue);
+    margin: 20px;
+}
+.container > .root >.step5 > .final > .text{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--Cool-gray);
+    font-weight: lighter;
+}
+.container > .root >.step5 > .final > .text > span{
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container > .root > .step5 > .final > .destop{
+    display: block;
+}
+.container > .root > .step5 > .final > .moble{
+    display:none;
+}
+@media screen and (max-width:430px) {
+    .container > .root > .step5 > .final > .destop{
+        display: none;
+    }
+    .container > .root > .step5 > .final > .moble{
+        display: block;
+    }
+}
