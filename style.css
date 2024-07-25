@@ -22,6 +22,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 .container{
     width: 800px;
@@ -36,7 +37,6 @@ body{
 @media screen and (max-width:430px) {
     body{
         width: 100%;
-        overflow: hidden;
     }
     *{
         padding: 0;
@@ -354,9 +354,17 @@ top:0px;
     justify-content: space-between;
 }
 @media screen and (max-width:430px) {
+    
+.container > .root > .Step2> .text{
+    top: 40px;
+    position: absolute;
+
+}
     .container > .root > .Step2 > .Step2_container{
         flex-direction: column;
-    
+    z-index: 1;
+    top: 70px;
+    position: absolute;
     }
     .container > .root > .Step2 > .Step2_container > .container1{
         width:100%;
@@ -581,6 +589,19 @@ top:0px;
     color: var(--White);
     border: none;
     background-color: var(--Marine-blue);
+}
+@media screen and (max-width:430px) {
+    .container > .root > .Step3 > .btns > .next_step{
+        width: 100px;
+        height: 30px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        color: var(--White);
+        border: none;
+        background-color: var(--Marine-blue);
+    }
 }
 .container > .root > .Step3 > .btns > .next_step:hover{
     cursor: pointer;
